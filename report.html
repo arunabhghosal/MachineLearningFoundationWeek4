@@ -11802,7 +11802,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11882,23 +11882,23 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -11929,7 +11929,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -13825,6 +13825,7 @@ Both the training and validation scores are good and there is no gap between the
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <p>Grid search technique allows to choose a model based on grid of parameters. It tries every possible combination of value of provided parameters to select best model.</p>
+<p>It tries to optimize hyperparameter.</p>
 
 </div>
 </div>
@@ -13850,7 +13851,7 @@ Both the training and validation scores are good and there is no gap between the
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>In k-fold cross-validation dataset is split into K bucktes of equal size. Each of the buckets is used as the testing set 1 time, and acts as the training set K-1 times. Then the average testing performance is used to estimate the performance.</p>
+<p>In k-fold cross-validation dataset is split into K bucktes of equal size. Each of the buckets is used as validation set 1 time, and acts as the training set K-1 times. Then the average performance is used to estimate the performance.</p>
 <p>Without k-fold cross-validation may select combination of hyper parameter value which overfit but actualy performs poorly.</p>
 
 </div>
@@ -14124,7 +14125,7 @@ Standard deviation of prices: 165,340.28</p>
 Predicted selling price for Client 2's home: 232,200.00
 Predicted selling price for Client 3's home: 938,053.85</p>
 <p>For client 1:
-Price is in the range of mean and median. It is reasonable.</p>
+Price is in the range of mean(454,342.94) and median(438,900.00). It is reasonable.</p>
 <p>For client 2:
 Price is below the range of mean and median. It is also reasonable because number of rooms are less than client 1, Neighborhood poverty level is high, Student-teacher ratio of nearby schools is also high.</p>
 <p>For client 3:
@@ -14213,6 +14214,7 @@ Range in prices: $73,357.39
 <p>Data collected from 1978 year may not be that relavent due to inflation.
 Only three features are present in dataset which is not sufficient at all because number of rooms can't define the size of the home.
 Data collected from a rural city may not be applicable as the demographics would change.</p>
+<p>Therefor constructed model should not be used in real world settings.</p>
 
 </div>
 </div>

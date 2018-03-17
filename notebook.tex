@@ -351,7 +351,7 @@ will know the dataset loaded successfully if the size of the dataset is
 reported.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{c+c1}{\PYZsh{} Import libraries necessary for this project}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} Import libraries necessary for this project}
         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
         \PY{k+kn}{import} \PY{n+nn}{visuals} \PY{k}{as} \PY{n+nn}{vs}
@@ -419,20 +419,20 @@ Calculate the minimum, maximum, mean, median, and standard deviation of
 \texttt{prices}. - Store each calculation in their respective variable.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} TODO: Minimum price of the data}
-        \PY{n}{minimum\PYZus{}price} \PY{o}{=} \PY{n}{prices}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{} TODO: Minimum price of the data}
+        \PY{n}{minimum\PYZus{}price} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{n}{prices}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} TODO: Maximum price of the data}
-        \PY{n}{maximum\PYZus{}price} \PY{o}{=} \PY{n}{prices}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
+        \PY{n}{maximum\PYZus{}price} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{n}{prices}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} TODO: Mean price of the data}
-        \PY{n}{mean\PYZus{}price} \PY{o}{=} \PY{n}{prices}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+        \PY{n}{mean\PYZus{}price} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{prices}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} TODO: Median price of the data}
-        \PY{n}{median\PYZus{}price} \PY{o}{=} \PY{n}{prices}\PY{o}{.}\PY{n}{median}\PY{p}{(}\PY{p}{)}
+        \PY{n}{median\PYZus{}price} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{median}\PY{p}{(}\PY{n}{prices}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} TODO: Standard deviation of prices of the data}
-        \PY{n}{std\PYZus{}price} \PY{o}{=} \PY{n}{prices}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{)}
+        \PY{n}{std\PYZus{}price} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{prices}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} Show the calculated statistics}
         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Statistics for Boston housing dataset:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -451,7 +451,7 @@ Minimum price: \$105,000.00
 Maximum price: \$1,024,800.00
 Mean price: \$454,342.94
 Median price \$438,900.00
-Standard deviation of prices: \$165,340.28
+Standard deviation of prices: \$165,171.13
 
     \end{Verbatim}
 
@@ -860,6 +860,8 @@ Grid search technique allows to choose a model based on grid of
 parameters. It tries every possible combination of value of provided
 parameters to select best model.
 
+It tries to optimize hyperparameter.
+
     \subsubsection{Question 8 -
 Cross-Validation}\label{question-8---cross-validation}
 
@@ -886,9 +888,9 @@ for your answer.
     \textbf{Answer: }
 
 In k-fold cross-validation dataset is split into K bucktes of equal
-size. Each of the buckets is used as the testing set 1 time, and acts as
-the training set K-1 times. Then the average testing performance is used
-to estimate the performance.
+size. Each of the buckets is used as validation set 1 time, and acts as
+the training set K-1 times. Then the average performance is used to
+estimate the performance.
 
 Without k-fold cross-validation may select combination of hyper
 parameter value which overfit but actualy performs poorly.
@@ -1114,8 +1116,8 @@ Predicted selling price for Client 1's home: 406,933.33 Predicted
 selling price for Client 2's home: 232,200.00 Predicted selling price
 for Client 3's home: 938,053.85
 
-For client 1: Price is in the range of mean and median. It is
-reasonable.
+For client 1: Price is in the range of mean(454,342.94) and
+median(438,900.00). It is reasonable.
 
 For client 2: Price is below the range of mean and median. It is also
 reasonable because number of rooms are less than client 1, Neighborhood
@@ -1191,6 +1193,8 @@ Only three features are present in dataset which is not sufficient at
 all because number of rooms can't define the size of the home. Data
 collected from a rural city may not be applicable as the demographics
 would change.
+
+Therefor constructed model should not be used in real world settings.
 
     \begin{quote}
 \textbf{Note}: Once you have completed all of the code implementations
