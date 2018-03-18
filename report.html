@@ -13824,9 +13824,14 @@ Both the training and validation scores are good and there is no gap between the
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Grid search technique allows to choose a model based on grid of parameters. It tries every possible combination of value of provided parameters to select best model.</p>
-<p>It tries to optimize hyperparameter.</p>
-
+<ul>
+<li>
+Grid search technique allows to choose a model based on grid of parameters. It tries to optimize hyperparameter.
+</li>
+<li>
+The grid search technique allows one to define a grid of parameters that will be searched using K-fold cross-validation.</li><li>
+The grid search technique tries every combination of the provided hyper-parameter values in to find the best model.
+    </li><li>Then find the highest cross-validation accuracy that matches with the corresponding parameters that optimizes the learning algorithm.</li></ul>
 </div>
 </div>
 </div>
@@ -13851,8 +13856,16 @@ Both the training and validation scores are good and there is no gap between the
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>In k-fold cross-validation dataset is split into K bucktes of equal size. Each of the buckets is used as validation set 1 time, and acts as the training set K-1 times. Then the average performance is used to estimate the performance.</p>
-<p>Without k-fold cross-validation may select combination of hyper parameter value which overfit but actualy performs poorly.</p>
+<p>In k-fold cross-validation</p>
+<p><ul></p>
+<p><li>
+    Dataset is divided into testing dataset and training dataset. 
+</li>
+    <li>
+ Training dataset is split into k bucktes of equal size. Each of the buckets is used as validation set 1 time, and acts as the training set K-1 times. 
+    </li><li>Then the average performance is used to estimate the performance.</li>
+&lt;/ul&gt;
+Without k-fold cross-validation may select combination of hyper parameter value which overfit but actualy performs poorly. Using K-fold benefit grid search as grid search will find the algorithm's optimal parameters/complexity using all of the data available.</p>
 
 </div>
 </div>
@@ -14211,10 +14224,21 @@ Range in prices: $73,357.39
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Data collected from 1978 year may not be that relavent due to inflation.
-Only three features are present in dataset which is not sufficient at all because number of rooms can't define the size of the home.
-Data collected from a rural city may not be applicable as the demographics would change.</p>
-<p>Therefor constructed model should not be used in real world settings.</p>
+<p><ul></p>
+<p><li>
+Data collected from 1978 year may not be that relavent due to inflation.
+</li></p>
+<p><li>
+Only three features are present in dataset which is not sufficient at all because number of rooms can't define the size of the home. Moreover condition of the property, availability of different amenities also play important factor in determining prices.
+</li></p>
+<p><li>
+The model is not robust enough because in Sensitivity gives variable prices. The variance is too much to call this mdoel as robust.    
+</li></p>
+<p><li>
+Data collected from a rural city may not be applicable as the demographics would change.
+</li>
+&lt;/ul&gt;
+Therefore constructed model should not be used in real world settings.</p>
 
 </div>
 </div>
